@@ -1,0 +1,141 @@
+Nama  : Fadlia
+Nim   : D0218333
+Kelas : Informatika A 2018
+
+TUGAS AKHIR INTELLIGENCE TRANSPORT SYSTEM
+1.Program dapat menerima input dan menghasilkan output dalam format TEXT. (10%)
+Jawaban : 
+import os ,dataset,math,random #memanggil library yang akan digunakan
+dataset =input ("masukkan nama dataset : ") #mengimputkan nama dataset dari keyboard
+cities=input("masukkan jumlah kota : ") #mengimputkan nama kota dari keyboard
+label=input("masukkan label kota : ") #mengimputkan label dari keyboard
+kordinat=input("masukkan koordinat kota : ") #mengimputkan tour dari keyboard
+ 
+2.Terdapat penjelasan/deskripsi Problem yang akan diselesaikan. (10%)
+  Jawaban : Travelling Salesman Problem (TSP) merupakan salah  satu permasalahan  optimasi  klasik  yang  sulit  untuk  dipecahkan secara  konvensional.  Penyelesaian  eksak  terhadap  persoalan ini  akan  melibatkan  algoritma  yang  mengharuskan  mencari kemungkinan  semua  solusi  yang  ada, Sehingga  akan terjadi  ledakan kombinasi  dan membuat  kompleksitas waktu dari eksekusi algoritma sangat tinggi.  Masalah  TSP melibatkan  seorang  sales  yang  harus melakukan  kunjungan  ke  sejumlah  kota  dalam  menjajakan produknya.  Rangkaian  kota-kota  yang  dikunjungi  harus membentuk  suatu  jalur  sedemikian  sehingga  kota-kota tersebut  hanya  boleh  dilewati tepat  satu  kali dan  kemudian kembali lagi ke kota awal. Kasus seperti ini sering diistilahkan dengan  sirkuit  hamilton,  representasinya  dikenal  dengan istilah  hamiltonian. Penyelesaian  terhadap permasalahan TSP  ini  adalah  untuk  memperoleh  jalur  terpendek. Penyelesaian  eksak  terhadap  masalah  TSP  mengharuskan untuk  melakukan  perhitungan terhadap  semua  kemungkinan rute yang  dapat diperoleh, kemudian  memilih salah satu  rute yang terpendek. Untuk itu jika terdapat kota yang harus dikunjungi,  maka  terdapat  n!  kombinasi  kota  yang  akan dibandingkan  jarak  masing-masing.  Dengan  cara  ini  waktu komputasi  yang  dibutuhkan  akan  jauh  meningkat  seiring dengan bertambahnya jumlah kota yang harus dikunjungi. Proses optimasi  menggunakan data input  berupa kota  dan  jarak  antar  kota  kemudian  diolah  menggunakan algoritma  greedy  dengan  penanda  sehingga  didapatkan  jalur terpedek  dan  total  biayanya.  Penanda  dalam  algoritma digunakan agar setiap kota hanya sekali dikunjungi. Pendekatan algoritma  greedy  dengan  penanda  memberikan  solusi  yang mempunyai  kompleksitas  waktu  komputasi  jauh  lebih  singkat dibandingkan dengan sejumlah algoritma lain seperti Algoritma Brute Force dan Dynamic Programming.
+
+3.Terdapat studi literature tentang masalah yang akan diselesaikan (minimal 10 paper internasional 10 tahun terakhir dari IEEE, ELSEVIER, ACM, springer). (10%)
+  Jawaban : Studi Literature Tentang Masalah Yang Akan Diselesaikan: 
+  1.Applegate, D. L., Bixby, R. E., Chvatal, V dan Cook, W. J. (2007),  The Implementation of Greedy Algorithm for Solving Travelling Salesman Problem in a Distribution Company
+  2.Applegate, D. L., Bixby, R. E., Chvatal, V dan Cook, W. J. (2006),  The Travelling Salesman Problem: A Computational Study, Princeton University Press, New Jersey.
+  3.Taha, H. A. (2007), Operations Research An Introduction Edisi 8, Pearson Prentice 	Hall, New Jersey.
+  4.Thomas H Cormen, “Introduction to Algorithms, Second Edition”, The MIT Press, 	London, 2009.
+  5.Christian Nilsson, “Heuristic for Travelling Salesman Problem”, Linköping University, 	2010. 
+  6.Simon Harris, “Beginning Algorithms”, Wiley Publishing Inc., Indianapolis, 2010. 
+  7.Gregory Gutin, “The Greedy Algoritm for the Symmetric TSP”, Royal Holloway, University of London, 2009. 
+  8.Iman, N. (2018). Greedy Algorithm for Solving Travelling Salesman Problem in a Distribution Company -Electronic Commerce Research and Applications, 30(May), 72–82. 
+  9.Kang, J. (2018). Implementation of Greedy Algorithm for Solving Travelling Salesman Problem  Human-Centric Computing and Information Sciences, 8(1), 32. 
+  10.Kauffman, R. J., & Ma, D. (2015). Special issue: Contemporary research on Travelling Salesman Problem in the global revolution. 
+
+4.Terdapat Penjelasan Algoritma yang digunakan. (20%)
+  Jawaban :  Algoritma Greedy Algoritma greedy merupakan algoritma yang memecahkan masalah langkah demi langkah dengan mengambil pilihan yang terbaik yang dapat diperoleh saat itu yang diistilahkan dengan optimum local. Algoritma ini berharap bahwa dengan memilih optimum  lokal pada  setiap  langkah  akan mencapai  optimum global. Prinsipnya take what you can get now!, tidak ada waktu untuk balik mengecek ke belakang atau ke depan. Di  dalam  algoritma  greedy  prinsip  Pencarian  jalur terpendek memakai fungsi seleksi dan itu sangat berguna untuk menentukan jalan tersingkat untuk menuju suatu tempat sesuai dengan asumsi diatas. dalam penerapannya, algoritma ini tidak selalu  mendapatkan solusi  optimal namun  pasti  menemukan solusi.  Kelebihan  algoritma  ini  adalah  kemampuannya menemukan solusi dengan jumlah node yang banyak dilakukan dengan sangat cepat. Algoritma  greedy  biasanya digunakan  untuk  menentukan memecahkan  masalah  lintasan  linier dimana  asal  dan tujuan merupakan node yang berbeda. Hal ini menjadi kendala apabila diterapkan pada kasus TSP, dimana jalur yang ada merupakan jalur hamiltonian. Hal ini  dapat diatasi  dengan menggunakan penanda. B. Penanda TSP  merupakan jalur  Hamiltonian, sehingga  setiap  node dimungkinkan  memiliki  dua  arah.  Jika  kita  menggunakan algoritma greedy pada kasus ini, maka harus dilengkapi dengan kemampuan  untuk  mengenali  kota  yang  telah  dilewati  agar tidak terjadi perulangan. Dengan kata lain, satu kota hanya di kunjungi sekali. Untuk  menyelesaikan  hal  tersebut,  dibutuhkan  sebuah penanda  setiap  kota  yang  telah  dikunjungi. Kota  atau  node yang  telah  dikunjungi  harus  ditandai,  misalnya  inisialisasi setiap kota  mempunya tanda  = 0, jika kota telah  dikunjungi, maka  tandanya berubah  menjadi  1. Ketika  proses pelacakan jalur  terjadi,  kota  dengan  tanda  =  1  tidak  perlu  dilewati/ diproses. Dengan  adanya  penanda  pada  algoritma  greedy,  proses pelacakan  dapat  dilakukan  tanpa  ada  kota  yang  dikunjungi berulang.  Hal  ini  memudahkan  pelacakan  untuk  kembali  ke kota asal.Pseudo codenya  adalah sebagai berikut : 
+  a.Input jumlah node 
+  b.Input  jarak  antar  kota,  dimana  jarak  yang  diinput cukup sekali, misalnya cukup menginput jarak antara kota  A  ke  kota  B,  secara  otomatis,  program  akan mengisi jarak antara kota B ke kota A. 
+  c.Setiap  yang  telah  dilewati  diberi  penanda  =  1, sementara  kota  yang  belum  dilewati  secara  default mempunyai penanda = 0. 
+  d.Gunakan  algoritma  greedy  untuk  mencari  optimum local step by step dengan tidak memproses kota yang telah dilewati (yaitu ditandai dengan penanda=1). 
+  e.Outpunya berupa jalur  optimal sesuai prinsip greedy dan total distance yang dibutuhkan.
+
+5.Terdapat Flowchart untuk Algoritma yang akan digunakan. (10%)
+  Jawaban : adapun bentuk flowchart nya yaitu
+  start-> Menginputkan,jumlah kota, Label Kota dan Kordinat Kota -> Menghitung Jarak antar Kota yang dilalui -> Ouput : Tour dengan biaya t -> Selesai
+
+6.Terdapat Implementasi Source Code untuk menyelesaikan masalah. (20%)
+Jawaban:
+	Implementasi Source Code untuk menyelesaikan masalah TSP yaitu menghitung tour dengan biaya terendah untuk mengunjungi semua kota dengan biaya minimum dengan algoritma greedy dengan bahasa pemprograman python :
+import os ,dataset,math,random #memanggil library yang akan digunakan
+dataset =input ("masukkan nama dataset : ") #mengimputkan nama dataset dari keyboard
+cities=input("masukkan jumlah kota : ") #mengimputkan nama kota dari keyboard
+label=input("masukkan label kota : ") #mengimputkan label dari keyboard
+kordinat=input("masukkan koordinat kota : ") #mengimputkan tour dari keyboard
+def distance(x1,y1,x2,y2):
+    return math.sqrt((x1-x2)**2+(y1-y2)**2) #fungsi menghitung jarak dua titik kota a-b;b-c,dst.
+def totaldistancetour(tour):
+    d=0 #fungsi menghitung total jarak yang akan terakumulasi dengan nilai awal =0 
+print(cities) #mencetak nama kota yang dikunjungi
+print(tour) #mencetak jumlah kota yang dikunjungi
+for i in range(1,len(tour)): #perulangan yang akan terjadi akumulasi secara terus menerus hingga mencapai batas yang telah di tentukan
+ x1=cities[tour[i-1]][0] #x1 merupakan kota ke 0 dari cities yang ke tour i-1(0) dengan dua kolom dengan koordinat x kolom 0
+y1=cities[tour[i-1]][1] #y1 merupakan kota ke 1 dari cities yang ke tour i-1(0) dengan dua kolom dengan koordinat y kolom 1
+x2=cities[tour[i]][0] #x1 merupakan kota ke 0 dari cities yang ke tour 1 dengan dua kolom dengan koordinat x kolom 0
+y2=cities[tour[i]][1] #x1 merupakan kota ke 0 dari cities yang ke tour 1 dengan dua kolom dengan koordinat x kolom 1
+d=d+distance(x1,y1,x2,y2) #menghitung jarak sementara dari satu kota ke satu kota lainnya
+print("jarak seentara" ,d)
+x1=cities[tour[len(tour)-1]][0]
+y1=cities[tour[len(tour)-1]][1]
+x2=cities[tour[0]][0]
+y2=cities[tour[0]][1]
+d=d+distance(x1,y1,x2,y2) #menghitung total jarak yang telah di lewati dan kembali ke 				  kota awal
+return d
+os.getcwd()
+xls=pandas.exelfile
+sheet = pandas.read_exel(xls,sheet1)
+cities=sheet.as_matrix()
+n=len(cities)
+tour=random.sample(range(n),n)
+print("tour dengan biaya terendah untuk mengunjungi semua kota dengan biaya minimum",tour) #mencetak tour dengan biaya terendah untuk mengunjungi semua kota dengan biaya minimum
+
+7.Terdapat Komentar Source Code yang mampu membuat programmer lain mudah memahami source code yang dibuat. (10%)
+  Jawaban:
+  Keterangan sourch code diawali dengan hastag (#)
+  import os ,dataset,math,random #memanggil library yang akan digunakan
+dataset=input("masukkan nama dataset : ")#mengimputkan nama dataset dari keyboard
+cities=input("masukkan jumlah kota : ")#mengimputkan nama kota dari keyboard
+label=input("masukkan label kota : ")#mengimputkan label dari keyboard
+kordinat=input("masukkan koordinat kota : ")#mengimputkan tour dari keyboard
+def distance(x1,y1,x2,y2):
+    return math.sqrt((x1-x2)**2+(y1-y2)**2)#fungsi menghitung jarak dua titik kota a-b;b-c,dst.
+def totaldistancetour(tour):
+    d=0 #fungsi menghitung total jarak yang akan terakumulasi dengan nilai awal =0 
+    print(cities)#mencetak nama kota yang dikunjungi
+    print(tour)#mencetak jumlah kota yang dikunjungi
+    for i in range(1,len(tour)):#perulangan yang akan terjadi akumulasi secara terus menerus hingga mencapai batas yang telah di tentukan
+    x1=cities[tour[i-1]][0]#x1 merupakan kota ke 0 dari cities yang ke tour i-1(0) dengan dua kolom dengan koordinat x kolom 0
+    y1=cities[tour[i-1]][1]#y1 merupakan kota ke 1 dari cities yang ke tour i-1(0) dengan dua kolom dengan koordinat y kolom 1
+    x2=cities[tour[i]][0]#x1 merupakan kota ke 0 dari cities yang ke tour 1 dengan dua kolom dengan koordinat x kolom 0
+    y2=cities[tour[i]][1]#x1 merupakan kota ke 0 dari cities yang ke tour 1 dengan dua kolom dengan koordinat x kolom 1
+    d=d+distance(x1,y1,x2,y2)#menghitung jarak sementara dari satu kota ke satu kota lainnya
+    print("jarak sementara" ,d)
+    x1=cities[tour[len(tour)-1]][0]
+    y1=cities[tour[len(tour)-1]][1]
+    x2=cities[tour[0]][0]
+    y2=cities[tour[0]][1]
+    d=d+distance(x1,y1,x2,y2)#menghitung total jarak yang telah di lewati dan kembali ke kota awal
+    return d
+os.getcwd()
+xls=pandas.exelfile
+sheet = pandas.read_exel(xls,sheet1)
+cities=sheet.as_matrix()
+n=len(cities)
+tour=random.sample(range(n),n)
+print("tour dengan biaya terendah untuk mengunjungi semua kota dengan biaya minimum",tour)#mencetak tour dengan biaya terendah untuk mengunjungi semua kota dengan biaya minimum
+    
+    
+8.Terdapat Pengujian Program. (10%)
+Jawaban: Screenshote Pengujian Program
+import os, itertools,math,random, pandas
+def distance(x1,y1,x2,y2):
+	return math.sqrt((x1-x2)**2+(y1-y2)**2)
+def totaldistancetour(tour):
+	d=0
+	print(cities)
+	print(tour)
+	for 1 in range(1, len(tour)):
+		x1=cities[tour[i-1]][0]
+		y1=cities[tour[i-1]][0]
+		x2=cities[tour[i]][0]
+		y2=cities[tour[i]][0]
+		d=d+distance(x1,y1,x2,y2)
+		print(“jarak sementara”.d)
+x1=cities[tour[len[tour[-1]][0]
+y1=cities[tour[len[tour[-1]][1]
+x2=cities[tour[0]][0]
+y2=cities[tour[0]][1]
+d=d+distance(x1,y1,x2,y2)
+return d
+os.getcwd ()
+xls = pandas.ExcelFile(‘Uji coba import coordinate 15 titik.xls’)
+xls = pandas.read_excel(xls, ‘Sheet1’)
+cities=sheet.as_matrix()
+n=len(cities)
+tour = random.sample(range(n),n);
+ 
